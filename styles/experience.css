@@ -1,0 +1,269 @@
+/**** Custom Properties **********************************************/
+
+:root {
+  --first-exp-color: #08416b;
+  --white-color: #fff;
+  --font: "Noto Sans", sans-serif;
+  --border: 0.3rem solid var(--first-exp-color);
+  --border-radius: 0.5rem;
+  --max-width: 1200px;
+  --footer-color: #f5750d;
+}
+
+/**** Reset **********************************************/
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  color: var(--white-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/**** Utilities **********************************************/
+
+/****** btn ******/
+.btn {
+  width: 200px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  border-radius: var(--border-radius);
+  background: var(--first-exp-color);
+  color: var(--white-color);
+  transition: box-shadow 1s;
+}
+
+.btn:hover {
+  box-shadow: rgba(82, 142, 184, 0.4) 0.313rem 0.313rem,
+    rgba(82, 142, 184, 0.3) 0.625rem 0.625rem,
+    rgba(82, 142, 184, 0.2) 0.938rem 0.938rem;
+}
+
+/****** others ******/
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+  padding: 0 3rem;
+}
+
+.none {
+  display: none;
+}
+
+/**** Site Styles **********************************************/
+
+.body-background {
+  background-image: url("../assets/background-body.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin: 3rem auto 1.5rem auto;
+  text-align: center;
+  color: var(--white-color);
+  border-bottom: var(--border);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/****** work cards ******/
+.arrow {
+  display: none;
+  width: 1.3rem;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.job {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.job-container {
+  margin: 0.6rem auto;
+}
+
+.job-description {
+  margin: 0 auto 0 auto;
+  font-weight: 300;
+  line-height: 1.6rem;
+  font-size: 1.1rem;
+}
+
+.job-title {
+  color: var(--first-exp-color);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.work-card {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.11rem solid rgba(255, 255, 255, 0.4);
+}
+
+.work-date {
+  margin: 0.2rem auto;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/****** reference cards ******/
+
+.card-title {
+  margin: 0 auto;
+  color: var(--first-exp-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.reference-card {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.11rem solid rgba(255, 255, 255, 0.4);
+}
+
+.reference-card p {
+  margin: 0.3rem 0;
+}
+
+.reference-card p:not(:first-of-type) {
+  font-weight: 300;
+}
+
+.card-title {
+  margin: 0 auto;
+  color: var(--first-exp-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.referene-container {
+  margin-top: 0.5rem;
+}
+
+/****** footer ******/
+
+.footer {
+  padding: 0.4rem;
+  text-align: center;
+  background: rgba(8, 65, 107, 0.3);
+  font-size: 1rem;
+  font-weight: 600;
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+}
+
+.footer small,
+.footer a {
+  color: var(--white-color);
+  font-weight: 400;
+  transition: all 1.3s ease;
+}
+
+.footer a:hover {
+  color: var(--footer-color);
+  font-size: 1.05rem;
+  transition: all 1.3s ease;
+}
+
+/**** Media Queries **********************************************/
+
+@media (max-width: 768px) {
+  .arrow {
+    display: inline-block;
+  }
+
+  .description-container {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  .description-container.show {
+    max-height: 1000px;
+    display: block;
+    opacity: 1;
+  }
+
+  .description-container.hide {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .job-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .arrow.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .referene-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .reference-card {
+    margin: 0;
+  }
+}
